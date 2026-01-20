@@ -1,10 +1,10 @@
 
-import React, { useState, useCallback } from 'react';
-import { ImageUploader } from './components/ImageUploader';
-import { Button } from './components/Button';
-import { Icons, BLAZER_COLORS } from './constants';
-import { ImageProcessingState, BlazerColor } from './types';
-import { transformToHeadshot } from './services/geminiService';
+import React, { useState } from 'react';
+import { ImageUploader } from './components/ImageUploader.tsx';
+import { Button } from './components/Button.tsx';
+import { Icons, BLAZER_COLORS } from './constants.tsx';
+import { ImageProcessingState } from './types.ts';
+import { transformToHeadshot } from './services/geminiService.ts';
 
 export default function App() {
   const [state, setState] = useState<ImageProcessingState>({
@@ -61,7 +61,7 @@ export default function App() {
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
               <Icons.Sparkles />
             </div>
             <h1 className="text-xl font-bold text-slate-900 tracking-tight">HeadshotPro AI</h1>
@@ -148,7 +148,7 @@ export default function App() {
               <div className="flex-grow flex items-center justify-center p-8 bg-slate-100 relative">
                 {state.isProcessing ? (
                   <div className="text-center space-y-4 max-w-xs animate-pulse">
-                    <div className="w-20 h-20 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-indigo-200">
+                    <div className="w-20 h-20 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-indigo-200 text-white">
                       <Icons.Sparkles />
                     </div>
                     <h3 className="text-xl font-bold text-slate-800">Transforming Image...</h3>
@@ -168,7 +168,7 @@ export default function App() {
                   </div>
                 ) : (
                   <div className="text-center space-y-4 opacity-40">
-                    <div className="w-24 h-24 border-4 border-dashed border-slate-400 rounded-3xl flex items-center justify-center mx-auto mb-4">
+                    <div className="w-24 h-24 border-4 border-dashed border-slate-400 rounded-3xl flex items-center justify-center mx-auto mb-4 text-slate-400">
                       <Icons.Camera />
                     </div>
                     <p className="text-lg font-medium text-slate-600">Your professional headshot will appear here</p>

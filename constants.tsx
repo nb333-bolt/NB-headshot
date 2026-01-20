@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BlazerColor } from './types';
+import { BlazerColor } from './types.ts';
 
 export const BLAZER_COLORS: BlazerColor[] = [
   'Navy Blue',

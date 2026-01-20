@@ -1,6 +1,6 @@
 
 import React, { useRef } from 'react';
-import { Icons } from '../constants';
+import { Icons } from '../constants.tsx';
 
 interface ImageUploaderProps {
   onImageSelect: (base64: string) => void;
